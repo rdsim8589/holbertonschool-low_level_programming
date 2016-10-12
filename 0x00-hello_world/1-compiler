@@ -1,1 +1,2 @@
-#!/bin/bash                                                                                                                                      gcc -S main.c
+#!/bin/bash                                                                                                                                     
+gcc -S $CFILE
