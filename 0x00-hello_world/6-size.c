@@ -1,11 +1,13 @@
 #include <stdio.h>
 /**
  * main - prints the size of various types
+ * Description: prints the size of a char, int, long int,
+ * long long int, and float
  * Return: "Programming is like building a multilingual puzzle
  */
 int main(void)
 {
-	char c;	
+	char c;
 	int i;
 	long int l;
 	long long int z;
