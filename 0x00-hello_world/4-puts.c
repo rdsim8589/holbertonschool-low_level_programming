@@ -1,12 +1,8 @@
 #include <stdio.h>
 /**
  * main - prints
- * @parameterx: void
-(*
- * Description: Longer description of the function)?
-(* section header: Section description)*
+ * @parameterx:
  * Return: "Programming is like building a multilingual puzzle
- *
  */
 int main(void)
 {
