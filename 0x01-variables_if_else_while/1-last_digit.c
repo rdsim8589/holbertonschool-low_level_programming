@@ -7,7 +7,6 @@
  *
  * Description: randomly generates the number and declares if
  * the value%10 is >5, =0, or <6
-(* section header: Section description)*
  * Return: the string declaring the last digit of number and the num
  * with if it is greater than 5 , is 0, or is less than 6 and not 0
  */
