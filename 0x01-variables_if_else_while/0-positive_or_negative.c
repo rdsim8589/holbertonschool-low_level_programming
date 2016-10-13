@@ -4,7 +4,6 @@
 
 /**
  * main - prints the int, state if +, - ,0
- * @parameterx: Description of parameter x
  *
  * Description: randomly generates the number and declares if postive
  * ,negative, or zero
@@ -26,7 +25,7 @@ int main(void)
 	{
 		printf("%u is zero\n", n);
 	}
-	else if (n < 0)
+	else
 	{
 		printf("%u is negative\n", n);
 	}
