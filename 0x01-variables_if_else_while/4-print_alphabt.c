@@ -3,8 +3,7 @@
 /**
  * main - prints all the number of base10
  *
- * Return: "0123456789"
- *
+ * Return: 0
  */
 
 int main(void)

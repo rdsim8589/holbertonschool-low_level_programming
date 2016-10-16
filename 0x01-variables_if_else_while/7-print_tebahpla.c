@@ -3,7 +3,7 @@
 /**
  * main -prints the reverse alphabet
  *
- * Return: zyxwvutsrqponmlkjihgfedcba
+ * Return: 0
  */
 
 int main(void)

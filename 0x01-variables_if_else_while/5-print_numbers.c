@@ -3,7 +3,7 @@
 /**
  * main -prints base 10 numbers
  *
- * Return: 0123456789
+ * Return: 0
  */
 
 int main(void)

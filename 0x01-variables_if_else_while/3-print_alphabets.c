@@ -3,10 +3,7 @@
 /**
  * main - create the lower and higher alphabet
  *
- * Description: create the lower and higher alphabet
- *
- * Return: 'abcdefghijklmnopqurtuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ'
- *
+ * Return: 0
  */
 
 int main(void)

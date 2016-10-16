@@ -5,10 +5,9 @@
 /**
  * main - last digit of the num and state if >5, <6, 0
  *
- * Description: randomly generates the number and declares if
- * the value%10 is >5, =0, or <6
- * Return: the string declaring the last digit of number and the num
- * with if it is greater than 5 , is 0, or is less than 6 and not 0
+ * Description: the string declaring the last digit of number and the
+ * num with if it is greater than 5 , is 0, or is less than 6 and not 0
+ * Return: 0
  */
 
 int main(void)

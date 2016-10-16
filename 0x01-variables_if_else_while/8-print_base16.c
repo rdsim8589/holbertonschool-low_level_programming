@@ -3,7 +3,7 @@
 /**
  * main-prints all the hexadecimal number
  *
- * Return: 012345678abcdef
+ * Return: 0
  */
 
 int main(void)

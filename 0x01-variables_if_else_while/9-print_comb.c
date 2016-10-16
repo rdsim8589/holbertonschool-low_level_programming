@@ -3,7 +3,7 @@
 /**
  * main - separate base 10 number by , and space
  *
- * Return: , 1, 2, 3, 4, 5, 6, 7, 8, 9
+ * Return: 0 
  */
 
 int main(void)

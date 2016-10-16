@@ -7,8 +7,7 @@
  *
  * Description: randomly generates the number and declares if postive
  * ,negative, or zero
- * Return: the randomly generated number followed by a statement
- * "is positive", "is negative", or "is zero"
+ * Return: 0 
  */
 
 int main(void)
