@@ -1,8 +1,10 @@
 #include <stdio.h>
+
 /**
- * main - prints using printf
- * Return:  "Programming is like building a multilingual puzzle
+ * main - prints a string using printf
+ * Return: 0
  */
+
 int main(void)
 {
 	printf("with proper grammar, but the outcome is a piece of art,\n");
