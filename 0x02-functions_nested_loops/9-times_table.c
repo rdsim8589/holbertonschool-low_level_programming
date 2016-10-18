@@ -15,18 +15,18 @@ void times_table(void)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-			multi = (num[i] - '0')*(num[j] - '0');
-			if (multi >= 10 )
+			multi = (num[i] - '0') * (num[j] - '0');
+			if (multi >= 10)
 			{
-				_putchar(multi/10 + '0');
-				_putchar(multi%10 + '0');
+				_putchar(multi / 10 + '0');
+				_putchar(multi % 10 + '0');
 			}
 			else
 			{
 				_putchar(' ');
 				_putchar(multi + '0');
 			}
-			if (j !=9)
+			if (j != 9)
 			{
 				_putchar(',');
 				_putchar(' ');
