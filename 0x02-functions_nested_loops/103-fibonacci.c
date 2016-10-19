@@ -13,7 +13,7 @@ int main(void)
 
 	fib1 = 1;
 	fib2 = 2;
-	for (n = 0; n < 2000000; n++)
+	for (n = 0; fib2 < 2000000; n++)
 	{
 		if (fib1 % 2 == 0)
 		{
