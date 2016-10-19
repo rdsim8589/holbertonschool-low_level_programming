@@ -9,16 +9,19 @@
 int main(void)
 {
 	int n;
-	unsigned long fib1, fib2;
+	unsigned long fib1, fib2, sum;
 
 	fib1 = 1;
 	fib2 = 2;
 	for (n = 0; n < 2000000; n++)
 	{
-		printf("%lu, %lu", fib1, fib2);
-		if (n != 2000000 - 1)
+		if (fib1 % 2 == 0)
 		{
-			printf(" ,");
+			sum += fib1;
+		}
+		if (fib2 % 2 == 0)
+		{
+			sum += fib2;
 		}
 		fib1 += fib2;
 		fib2 += fib1;
