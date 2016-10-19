@@ -40,7 +40,7 @@ int main(void)
 			bfib2 = bfib2 % 1000000000000000;
 			printf("%ld%ld, %ld%ld", ffib1, bfib1, ffib2, bfib2);
 		}
-		if (n != 48)
+		if (n != 47)
 			printf(", ");
 
 	}
