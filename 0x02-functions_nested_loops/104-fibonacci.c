@@ -13,7 +13,7 @@ int main(void)
 
 	fib1 = 1;
 	fib2 = 2;
-	for (n = 0; n < 49; n++)
+	for (n = 0; n < 48; n++)
 	{
 		if (n < 44)
 		{
