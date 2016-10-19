@@ -16,7 +16,7 @@ int main(void)
 	for (n = 0; n < 2000000; n++)
 	{
 		printf("%lu, %lu", fib1, fib2);
-		if (n != 25)
+		if (n != 2000000 - 1)
 		{
 			printf(" ,");
 		}
