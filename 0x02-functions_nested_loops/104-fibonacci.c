@@ -31,13 +31,13 @@ int main(void)
 		}
 		else
 		{
+			printf("%ld%ld, %ld%ld", ffib1, bfib1, ffib2, bfib2);
 			bfib1 += bfib2;
 			ffib1 = ffib1 + ffib2 + (bfib1 / 10000000000);
 			bfib1 = bfib1 % 10000000000;
 			bfib2 += bfib1;
 			ffib2 = ffib1 + ffib2 + (bfib2 / 10000000000);
 			bfib2 = bfib2 % 10000000000;
-			printf("%ld%ld, %ld%ld", ffib1, bfib1, ffib2, bfib2);
 		}
 		if (n != 48)
 		{
