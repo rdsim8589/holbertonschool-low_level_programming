@@ -15,17 +15,17 @@ int main(void)
 	fib2 = 2;
 	for (n = 0; n < 49; n++)
 	{
-		if (n < 44)
+		if (n < 43)
 		{
-			printf("%lu, %lu", fib1, fib2);
+			printf("%lu, %lu\n", fib1, fib2);
 			fib1 += fib2;
 			fib2 += fib1;
-			if (n == 43)
+			if (n == 42)
 			{
-			ffib1 = fib1 / 10000000000;
-			bfib1 = fib1 % 10000000000;
-			ffib2 = fib2 / 10000000000;
-			bfib2 = fib2 % 10000000000;
+			ffib1 = fib1 / 10000000000000;
+			bfib1 = fib1 % 10000000000000;
+			ffib2 = fib2 / 10000000000000;
+			bfib2 = fib2 % 10000000000000;
 			}
 
 		}
@@ -33,11 +33,12 @@ int main(void)
 		{
 			printf("%ld%ld, %ld%ld", ffib1, bfib1, ffib2, bfib2);
 			bfib1 += bfib2;
-			ffib1 = ffib1 + ffib2 + (bfib1 / 10000000000);
-			bfib1 = bfib1 % 10000000000;
+			ffib1 = ffib1 + ffib2 + (bfib1 / 10000000000000);
+			bfib1 = bfib1 % 10000000000000;
 			bfib2 += bfib1;
-			ffib2 = ffib1 + ffib2 + (bfib2 / 10000000000);
-			bfib2 = bfib2 % 10000000000;
+			ffib2 = ffib1 + ffib2 + (bfib2 / 10000000000000);
+			bfib2 = bfib2 % 10000000000000;
+
 		}
 		if (n != 48)
 		{
