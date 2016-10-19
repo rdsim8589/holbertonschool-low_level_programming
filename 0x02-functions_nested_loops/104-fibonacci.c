@@ -22,10 +22,10 @@ int main(void)
 			fib2 += fib1;
 			if (n == 43)
 			{
-			ffib1 = fib1 / 100000000000;
-			bfib1 = fib1 % 100000000000;
-			ffib2 = fib2 / 100000000000;
-			bfib2 = fib2 % 100000000000;
+			ffib1 = fib1 / 100000000000000;
+			bfib1 = fib1 % 100000000000000;
+			ffib2 = fib2 / 100000000000000;
+			bfib2 = fib2 % 100000000000000;
 			}
 
 		}
@@ -33,11 +33,11 @@ int main(void)
 		{
 			printf("%ld%ld, %ld%ld", ffib1, bfib1, ffib2, bfib2);
 			bfib1 += bfib2;
-			ffib1 = ffib1 + ffib2 + (bfib1 / 100000000000);
-			bfib1 = bfib1 % 100000000000;
+			ffib1 = ffib1 + ffib2 + (bfib1 / 100000000000000);
+			bfib1 = bfib1 % 100000000000000;
 			bfib2 += bfib1;
-			ffib2 = ffib1 + ffib2 + (bfib2 / 100000000000);
-			bfib2 = bfib2 % 100000000000;
+			ffib2 = ffib1 + ffib2 + (bfib2 / 100000000000000);
+			bfib2 = bfib2 % 100000000000000;
 
 		}
 		if (n != 48)
