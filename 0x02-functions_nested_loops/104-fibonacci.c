@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (n < 43)
 		{
-			printf("%lu, %lu\n", fib1, fib2);
+			printf("%lu, %lu", fib1, fib2);
 			fib1 += fib2;
 			fib2 += fib1;
 			if (n == 42)
