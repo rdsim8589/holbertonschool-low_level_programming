@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - print the sum of the Fibonacci numbers up to 4,000,000
+ * main - print the sum of the Fibonacci number < 4,000,000
  *
- * return: 0
+ * Return: 0
  */
 
 int main(void)
