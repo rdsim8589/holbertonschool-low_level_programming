@@ -24,5 +24,5 @@ int main(void)
 		fib2 += fib1;
 	}
 	printf("\n");
-	return(0);
+	return (0);
 }
