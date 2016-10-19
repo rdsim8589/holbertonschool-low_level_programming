@@ -13,7 +13,7 @@ int main(void)
 
 	fib1 = 1;
 	fib2 = 2;
-	for (n = 0; n < 48; n++)
+	for (n = 0; n < 49; n++)
 	{
 		if (n < 44)
 		{
@@ -39,7 +39,7 @@ int main(void)
 			bfib2 = bfib2 % 10000000000;
 			printf("%ld%ld, %ld%ld", ffib1, bfib1, ffib2, bfib2);
 		}
-		if (n != 47)
+		if (n != 48)
 		{
 			printf(", ");
 		}
