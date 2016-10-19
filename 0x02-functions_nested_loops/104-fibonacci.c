@@ -26,7 +26,7 @@ int main(void)
 			bfib1 = fib1 % 1000000000000000;
 			ffib2 = fib2 / 1000000000000000;
 			bfib2 = fib2 % 1000000000000000;
-			printf(", %ld%ld, %ld0%ld", ffib1, bfib1, ffib2, bfib2);
+			printf(", %ld0%ld, %ld0%ld", ffib1, bfib1, ffib2, bfib2);
 			}
 
 		}
