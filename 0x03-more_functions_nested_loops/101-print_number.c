@@ -28,9 +28,14 @@ int num_len(int n)
 
 void print_number(int n)
 {
-	int ten_power;
+	int ten_power, temp;
 
 	ten_power = 1;
+	temp = n;
+	if (n == -2147483648)
+	{
+		n++;
+	}
 	if (n < 0)
 	{
 		n *= -1;
@@ -45,5 +50,12 @@ void print_number(int n)
 		_putchar((n / ten_power) % 10 + '0');
 		ten_power /= 10;
 	}
+	if (temp == -2147483648)
+	{
+		_putchar('8');
+	}
+	else
+	{
 	_putchar(n % 10 + '0');
+	}
 }
