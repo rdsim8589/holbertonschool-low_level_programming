@@ -4,20 +4,20 @@
  * @s_ptr: a pointer of a string
  */
 
-void rev_string(char *s_ptr)
+void rev_string(char *s)
 {
 	int n, m;
 	char temp_array[100];
 
-	for (n = 1; *(s_ptr + n) != '\0'; n++)
+	for (n = 1; *(s + n) != '\0'; n++)
 	{
 	}
 	for (m = 0; m <= n; m++)
 	{
-		temp_array[m] = *(s_ptr + n - 1 - m); /*-1 account for index*/
+		temp_array[m] = *(s + n - 1 - m); /*-1 account for index*/
 	}
 	for (m = 0; m <= n; m++)
 	{
-		s_ptr[m] = temp_array[m];
+		s[m] = temp_array[m];
 	}
 }
