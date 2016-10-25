@@ -14,14 +14,14 @@ void puts_half(char *str_ptr)
 	}
 	if (n % 2 == 0)
 	{
-		for (m = (n / 2); m <= n; m++)
+		for (m = (n / 2); m <= n - 1; m++)
 		{
 			_putchar(str_ptr[m]);
 		}
 	}
 	else
 	{
-		for (m = ((n - 1) / 2); m <= n; m++)
+		for (m = ((n - 1) / 2); m <= n - 1; m++)
 		{
 			_putchar(str_ptr[m]);
 		}
