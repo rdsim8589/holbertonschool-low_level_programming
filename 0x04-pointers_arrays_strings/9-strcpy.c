@@ -13,7 +13,7 @@ char *_strcpy(char *dest_ptr, char *src_ptr)
 {
 	int n, m;
 
-	for (n = 0; src_ptr[n] != 0; n ++)
+	for (n = 0; src_ptr[n] != 0; n++)
 	{
 	}
 	for (m = 0; m <= n; m++)
