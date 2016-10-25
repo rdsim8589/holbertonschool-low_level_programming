@@ -5,17 +5,17 @@
  * @s_ptr: a string that is a pointer of type char
  */
 
-void print_rev(char *s_ptr)
+void print_rev(char *s)
 {
 	int n, m;
 
 
-	for (n = 0; s_ptr[n] != '\0'; n++)
+	for (n = 0; s[n] != '\0'; n++)
 	{
 	}
 	for (m = n; m >= 0; m--)
 	{
-		_putchar(s_ptr[m]);
+		_putchar(s[m]);
 	}
 	_putchar('\n');
 }
