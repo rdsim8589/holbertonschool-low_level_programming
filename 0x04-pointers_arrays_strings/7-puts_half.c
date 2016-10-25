@@ -9,19 +9,21 @@ void puts_half(char *str_ptr)
 {
 	int n, m;
 
-	for (n = 0; str_ptr[n] != '\0'; n++)
+	n = 0;
+	while(str_ptr[n] != '\0')
 	{
+		n++;
 	}
 	if (n % 2 == 0)
 	{
-		for (m = (n / 2); m <= n - 1; m++)
+		for (m = ((n / 2)); m <= n - 1; m++)
 		{
 			_putchar(str_ptr[m]);
 		}
 	}
 	else
 	{
-		for (m = ((n - 1) / 2); m <= n - 1; m++)
+		for (m = (((n) / 2) + 1); m <= n - 1; m++)
 		{
 			_putchar(str_ptr[m]);
 		}
