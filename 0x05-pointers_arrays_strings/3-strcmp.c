@@ -10,7 +10,7 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, j , k;
+	int i, j, k;
 
 	i = 0;
 	for (j = 0; s1[j] != '\0'; j++)
@@ -23,7 +23,7 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (s1[i] != s2[i])
 		{
-			return(s1[i] - s2[i]);
+			return (s1[i] - s2[i]);
 		}
 		i++;
 	}
@@ -33,7 +33,7 @@ int _strcmp(char *s1, char *s2)
 	}
 	else
 	{
-		return (-1*s2[j]);
+		return (-1 * s2[j]);
 	}
 
 	return (0);
