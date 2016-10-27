@@ -17,10 +17,14 @@ char *cap_string(char *s)
 	{
 		if (s[i] >= 'a' && s[i] <= 'z')
 		{
+			if (i == 0)
+			{
+				s[0] -= ' ';
+			}
 			j = 0;
 			while (spec_array[j] != '\0')
 			{
-				if (s[i-1] == spec_array[j])
+				if (s[i - 1] == spec_array[j])
 				{
 					s[i] -= ' ';
 				}
