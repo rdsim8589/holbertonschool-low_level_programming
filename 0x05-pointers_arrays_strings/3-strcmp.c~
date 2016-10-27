@@ -1,0 +1,17 @@
+#include "holberton.h"
+
+/**
+ * _strcmp - frunctions that compares two strings
+ * @s1: a char type string pointer
+ * @s2: a char type string pointer
+ *
+ * Return: an int stating the difference in acsii value
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int diff;
+
+	diff =  *s1 - *s2;
+	return (diff);
+}
