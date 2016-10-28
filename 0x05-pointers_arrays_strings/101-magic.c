@@ -1,9 +1,4 @@
 #include <stdio.h>
-/**
- * main - changes the value at an address
- *
- * Return: 0 if it worked
- */
 
 int main(void)
 {
