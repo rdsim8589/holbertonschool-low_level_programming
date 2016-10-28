@@ -1,4 +1,9 @@
 #include <stdio.h>
+/**
+ * main - changes the value at an address
+ *
+ * Return: 0 if it worked
+ */
 
 int main(void)
 {
@@ -16,7 +21,7 @@ int main(void)
 	 * - only one statement
 	 * - you are not allowed to code anything else than this line of code
 	 */
-	*(p + 7) = 98;
+	*(p + 5) = 98;
 	/* ...so that this prints 98\n */
 
 	printf("a[2] = %d\n", a[2]);
