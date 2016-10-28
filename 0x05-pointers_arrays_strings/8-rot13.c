@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * leet - encodes a tring in l337
+ * rot13 - encodes a string using rot13
  * @s: string
  *
  * Return: a pointer to char type
