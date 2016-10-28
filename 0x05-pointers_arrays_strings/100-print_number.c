@@ -48,6 +48,5 @@ void print_number(int n)
 		_putchar((n / ten_power) % 10 + '0');
 		ten_power /= 10;
 	}
-	n *= -1;
-	_putchar(n % 10 + '0');
+	_putchar(-1*(n % 10 - '0'));
 }
