@@ -15,10 +15,12 @@ char *_strstr(char *haystack, char *needle)
 	i = j = start = 0;
 	while (haystack[i] != '\0')
 	{
+		/*keeps track of the start of needle*/
 		if (haystack[i] == needle[0])
 		{
 			start = i;
 		}
+		/*checks if char of haystack same as char of needle*/
 		if (haystack[i] == needle[j])
 		{
 			if (needle[j + 1] == '\0')
@@ -27,16 +29,19 @@ char *_strstr(char *haystack, char *needle)
 			}
 			j++;
 		}
+		/*checks if char  needle[0] side by side in haystack*/
 		else if (haystack[i] == needle[0])
 		{
 			j = 1;
 		}
+		/*if haystack[i] != needle[j], restart needle index*/
 		else
 		{
 			j = 0;
 		}
 		i++;
 	}
+	/*edge case to check if haystack[i] == '\0'*/
 	if (needle[j] == '\0')
 	{
 		return (haystack + start);
