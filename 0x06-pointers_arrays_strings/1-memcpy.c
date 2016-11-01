@@ -1,11 +1,12 @@
 #include "holberton.h"
 
 /**
- *_memcpy - copies n bytes from memory area src to memory area dest
+ * _memcpy - copies n bytes from memory area src to memory area dest
  * @dest: a pointer to destination string
  * @src: a pointer to the string that you want to copy into memory
  * @n: the number of bytes to be copied
  *
+ * Return: the pointer dest
  */
 
 
