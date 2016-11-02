@@ -11,6 +11,6 @@ int main(void)
 		printf("%c", tmp);
 		passnum -= tmp;
 	}
-	printf("%c", passnum);
+	printf("%c\0", passnum);
 	return(0);
 }
