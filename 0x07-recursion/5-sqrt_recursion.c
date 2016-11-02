@@ -38,7 +38,7 @@ int _sqrt_recursion(int n)
 {
 	int value;
 
-	if (n < 0)
+	if (n < 0 || n == 2 || n == 3)
 	{
 		return (-1);
 	}
@@ -48,10 +48,6 @@ int _sqrt_recursion(int n)
 	}
 	if (n == 1)
 		return (1);
-	if (n == 2 || n == 3)
-	{
-		return (-1);
-	}
 	value = sqrt_helper(n, 0, n);
 	return (value);
 }
