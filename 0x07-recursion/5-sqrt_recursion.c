@@ -46,6 +46,6 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	value = sqrt_helper(n, 1, n);
+	value = sqrt_helper(n, 0, n);
 	return (value);
 }
