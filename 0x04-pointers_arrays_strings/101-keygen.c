@@ -1,9 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 int main(void)
 {
 	int passnum, tmp;
+
+	srand(time(NULL));
 	passnum = 2772;
 	while (passnum >= 127)
 	{
@@ -11,6 +14,6 @@ int main(void)
 		printf("%c", tmp);
 		passnum -= tmp;
 	}
-	printf("%c\0", passnum);
+	printf("%c", passnum);
 	return(0);
 }
