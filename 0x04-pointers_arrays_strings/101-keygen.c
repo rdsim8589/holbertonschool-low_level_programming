@@ -7,7 +7,7 @@ int main(void)
 	passnum = 2772;
 	while (passnum >= 127)
 	{
-		tmp = rand() % 112 + 1;
+		tmp = rand() % 126 + 1;
 		printf("%c", tmp);
 		passnum -= tmp;
 	}
