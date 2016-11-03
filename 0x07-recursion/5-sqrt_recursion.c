@@ -16,7 +16,7 @@ int sqrt_helper(int n, int check)
 	}
 	if (check * check < n)
 	{
-		return (sqrt_helper (n, check + 1));
+		return (sqrt_helper(n, check + 1));
 	}
 	return (-1);
 
