@@ -4,7 +4,7 @@
  * helper_2 - compares two strings
  * @str: a pointer to a string
  * @check: a pointer to a string that is compared against str
- * @save: a pointer to the string after the * of s2
+ * @save: a pointer to the string after the * of check.
  *
  * Return: 1 if the stings ==, and 0 otherwise.
  */
