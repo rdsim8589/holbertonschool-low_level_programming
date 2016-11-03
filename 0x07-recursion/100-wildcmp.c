@@ -49,7 +49,8 @@ int helper_2(char *str, char *check, char *save)
 int wildcmp(char *s1, char *s2)
 {
 	int check;
-
+	if (*s2 == '\0' && *s1 == '\0')
+		return (1);
 	if (*s2 == '\0' || *s1 == '\0')
 		return (0);
 	check = helper_2(s1, s2, s2);
