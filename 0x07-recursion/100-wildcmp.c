@@ -37,7 +37,7 @@ int helper_2(char *str, char *check, char *save)
 		}
 		return (helper_2(str + 1, check, save));
 	}
-	return (0);
+	return (1);
 }
 /**
  * wildcmp - compares two strings
