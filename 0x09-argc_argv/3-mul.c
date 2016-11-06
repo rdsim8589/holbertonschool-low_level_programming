@@ -7,7 +7,7 @@
  * @argc: count of arguments supplied to the program
  * @argv: pointer to an array of pointers.
  *
- * Return: 1 is complete
+ * Return: 0 or 1 is complete
  */
 int main(int argc, char **argv)
 {
@@ -21,6 +21,7 @@ int main(int argc, char **argv)
 	else
 	{
 		printf("Error\n");
+		return (1);
 	}
-	return (1);
+	return (0);
 }
