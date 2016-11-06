@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 {
 	int multi;
 
-	if (argc -1 == 2)
+	if (argc - 1 == 2)
 	{
 		multi = atoi(argv[1]) * atoi(argv[2]);
 		printf("%d\n", multi);
