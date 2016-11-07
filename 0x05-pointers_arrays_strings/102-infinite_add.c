@@ -117,8 +117,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	char *larger_n, *smaller_n;
 	int i, j, len_of_sum, add, lg_n_len, sm_n_len;
 
-	larg_n = find_larger(n1, n2);
-	small_n = find_smaller(n1, n2);
+	l_n = find_larger(n1, n2);
+	s_n = find_smaller(n1, n2);
 	lg_n_len = len_of(larg_n);
 	sm_n_len = len_of(small_n);
 	len_of_sum = n_sum_len(larger_n, smaller_n);
@@ -131,16 +131,16 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		if (j <= sm_n_len)
 		{
-			add = larg_n[lg_n_len - i] + small_n[sm_n_len - j] - 92 + remain;
+			add = l_n[lg_n_len - i] + s_n[sm_n_len - j] - 92 + rem;
 			r[len_of_sum - i] = add%10 + '0';
-			remain = add/10;
+			rem = add/10;
 			j++;
 		}
 		else
 		{
-			add = larg_n[lg_n_len - i] - '0' + remain;
+			add = larg_n[lg_n_len - i] - '0' + rem;
 			r[len_of_sum - i] = add%10 + '0';
-			remain = 0;
+			rem = 0;
 			j++;
 		}
 		i++;
