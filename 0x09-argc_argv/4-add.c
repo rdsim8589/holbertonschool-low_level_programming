@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 			j++;
 		}
 		check_num = atoi(argv[i]);
-		if (check_num > 0 || *argv[i] == '0')
+		if (check_num > 0)
 		{
 			add += check_num;
 		}
