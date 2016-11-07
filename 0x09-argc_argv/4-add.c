@@ -11,7 +11,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i, add, check_num;
+	int i, j, add, check_num;
 
 	i = 1;
 	if (argc == 1)
@@ -21,18 +21,20 @@ int main(int argc, char **argv)
 	}
 	while (i < argc)
 	{
+		j = 0;
+		while (argv[i][j] != '\n')
+		{
+			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
+		}
 		check_num = atoi(argv[i]);
-		if (check_num > 0)
+		if (check_num > 0 || *argv[i] == '0')
 		{
 			add += check_num;
-		}
-		else if (*argv[i] == '0')
-		{
-			add += atoi(argv[i]);		}
-		else
-		{
-			printf("Error\n");
-			return (1);
 		}
 		i++;
 	}
