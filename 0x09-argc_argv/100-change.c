@@ -16,21 +16,22 @@ int main(int argc, char **argv)
 
 	num_of_coins = 0;
 	i = 0;
-	if (argc <= 1)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else
+	if (argc == 2)
 	{
 		coin_total = atoi(argv[1]);
 		while (i < 5)
 		{
-			num_of_coins += coin_total/diff_coins[i];
+			num_of_coins += coin_total / diff_coins[i];
 			coin_total = coin_total % diff_coins[i];
 			i++;
 		}
 		printf("%d\n", num_of_coins);
 	}
-	return(0);
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	return (0);
 }
