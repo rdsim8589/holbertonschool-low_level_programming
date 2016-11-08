@@ -14,14 +14,19 @@ int main(int argc, char **argv)
 	int diff_coins[] = {25, 10, 5, 2, 1};
 	int coin_total, i, num_of_coins;
 
-	num_of_coins = 0;
-	i = 0;
-	coin_total = atoi(argv[1]);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	coin_total = atoi(argv[1]);
+	if (coin_total < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	num_of_coins = 0;
+	i = 0;
 	while (i < 5)
 	{
 		num_of_coins += coin_total / diff_coins[i];
