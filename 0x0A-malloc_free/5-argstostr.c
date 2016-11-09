@@ -14,8 +14,6 @@ char *argstostr(int ac, char **av)
 	char *array;
 	int i, j, ary_i, str_count;
 
-	if (ac <= 1)
-		return (NULL);
 	if (av == 0 || av == NULL)
 		return (NULL);
 /*find the size of all the strings in av*/
