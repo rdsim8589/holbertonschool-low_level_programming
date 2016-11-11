@@ -1,0 +1,14 @@
+#include <stdlib.h>
+
+/**
+ * _calloc - allocates memory from an array using malloc
+ * @nmemb: number of members
+ * @size: the size of the type
+ *
+ * return: a void type created through malloc
+ */
+
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	
+}
