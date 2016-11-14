@@ -1,0 +1,4 @@
+#ifndef FILE_NAME
+#define FILE_NAME \
+	fprintf("%s", __FILE__);
+#endif
