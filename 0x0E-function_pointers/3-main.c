@@ -9,7 +9,7 @@
  *
  * Return: 0 if complete
  */
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int num1, num2;
 
@@ -19,7 +19,7 @@ int main (int argc, char **argv)
 		exit(98);
 	}
 	if (argv[1][0] >= '0' && argv[1][0] <= '9'
-	    && argv [3][0] >='0' && argv [3][0] <= '9')
+	    && argv[3][0] >= '0' && argv[3][0] <= '9')
 	{
 		num1 = atoi(argv[1]);
 		num2 = atoi(argv[3]);

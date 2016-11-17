@@ -52,6 +52,8 @@ int op_div(int a, int b)
  * op_mod - a % b
  * @a: an int a
  * @b: an int b
+ *
+ * Return: a % b
  */
 int op_mod(int a, int b)
 {
