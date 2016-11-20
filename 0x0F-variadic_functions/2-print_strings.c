@@ -13,28 +13,41 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *str_holder;
 
-	if (separator != NULL)
+
+	va_start(strings, n);
+	for (i = 0; i < n; i++)
 	{
-		va_start(strings, n);
-		for (i = 0; i < n; i++)
+		str_holder = va_arg(strings, char*);
+		if (separator != NULL)
 		{
-			str_holder = va_arg(strings, char*);
 			if (str_holder != NULL)
 			{
 				if (i == n - 1)
-					printf("%s\n", str_holder);
+					printf("%s", str_holder);
 				else
 					printf("%s%s", str_holder, separator);
 			}
 			else
 			{
 				if (i == n - 1)
-					printf("(nil)\n");
+					printf("(nil)");
 				else
-				printf("(nil)%s", separator);
+					printf("(nil)%s", separator);
 			}
 		}
-		va_end(strings);
-	}
+		else
+		{
+			if (str_holder != NULL)
+			{
+				printf("%s", str_holder);
 
+			}
+			else
+			{
+				printf("(nil)");
+			}
+		}
+	}
+	va_end(strings);
+	printf("\n");
 }
