@@ -4,6 +4,7 @@
 #include "variadic_functions.h"
 /**
  * prt_c - prints out char types
+ * @elements: the va_list of elements
  */
 void prt_c(va_list elements)
 {
@@ -11,6 +12,7 @@ void prt_c(va_list elements)
 }
 /**
  * prt_i - prints out int types
+ * @elements: the va_list of elements
  */
 void prt_i(va_list elements)
 {
@@ -18,6 +20,7 @@ void prt_i(va_list elements)
 }
 /**
  * prt_f - prints out float types
+ * @elements: the va_list of elements
  */
 void prt_f(va_list elements)
 {
@@ -25,6 +28,7 @@ void prt_f(va_list elements)
 }
 /**
  * prt_s - prints out type char*
+ * @elements: the va_list of elements
  */
 void prt_s(va_list elements)
 {
@@ -57,7 +61,7 @@ void print_all(const char * const format, ...)
 
 	va_start(elements, format);
 	i = 0;
-	while (format != NULL && format[i] != '\0' )
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (j < 4)
