@@ -5,32 +5,32 @@
 /**
  * prt_c - prints out char types
  */
-void prt_c(va_list ele)
+void prt_c(va_list elements)
 {
-	printf("%c", va_arg(ele, int));
+	printf("%c", va_arg(elements, int));
 }
 /**
  * prt_i - prints out int types
  */
-void prt_i(va_list ele)
+void prt_i(va_list elements)
 {
-	printf("%i", va_arg(ele, int));
+	printf("%i", va_arg(elements, int));
 }
 /**
  * prt_f - prints out float types
  */
-void prt_f(va_list ele)
+void prt_f(va_list elements)
 {
-	printf("%f", va_arg(ele, double));
+	printf("%f", va_arg(elements, double));
 }
 /**
  * prt_s - prints out type char*
  */
-void prt_s(va_list ele)
+void prt_s(va_list elements)
 {
 	char *tmp_str;
 
-	tmp_str = va_arg(ele, char*);
+	tmp_str = va_arg(elements, char*);
 	if (tmp_str == NULL)
 	{
 		tmp_str = "(nil)";
@@ -53,25 +53,25 @@ void print_all(const char * const format, ...)
 		{"s", prt_s},
 		{NULL, NULL}
 	};
-	printf("error3");
+	char *sep = "";
+
 	va_start(elements, format);
-	if (format != NULL)
+	i = 0;
+	while (format != NULL && format[i] != '\0' )
 	{
-		printf("error1");
-		i = 0;
-		while (format[i] != '\0')
+		j = 0;
+		while (j < 4)
 		{
-			printf("error2");
-			j = 0;
-			while (format[i] != type_prt[j].data_type[0]
-			       && type_prt[j].data_type != NULL)
+			if (format[i] == type_prt[j].data_type[0])
 			{
-				j++;
+				printf("%s", sep);
+				type_prt[j].prt(elements);
+				sep = ", ";
 			}
-			type_prt[j].print(elements);
-			i++;
+			j++;
 		}
-		printf("\n");
-		va_end(elements);
+		i++;
 	}
+	printf("\n");
+	va_end(elements);
 }
