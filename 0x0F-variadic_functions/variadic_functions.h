@@ -8,7 +8,7 @@
 typedef struct type_print
 {
 	char *data_type;
-	void (*print)();
+	void (*prt)();
 } t_prt;
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
