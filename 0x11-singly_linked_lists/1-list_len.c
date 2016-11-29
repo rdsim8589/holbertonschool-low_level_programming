@@ -4,7 +4,7 @@
  * list_len - return the number of elements in linked list_t list
  * @h: a const that is a pointer to list_h
  *
- * return: the number of elements in the linked list_t list
+ * Return: the number of elements in the linked list_t list
  */
 size_t list_len(const list_t *h)
 {
