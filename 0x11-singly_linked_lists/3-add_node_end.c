@@ -3,6 +3,8 @@
  * add_node_end - add a node at the end of a list_t list
  * @head: a pointer to the pointer of a struct to the list_t
  * @str: a str to be place within a node
+ *
+ * Return: a pointer to a head of the list_t list
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
