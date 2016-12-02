@@ -6,45 +6,45 @@
  *
  * Return: 1 if it succeeds, or -1 if it fails
  */
- int delete_nodeint_at_index(listint_t **head, unsigned int index)
- {
-	 listint_t *current, *tmp_hold;
-	 unsigned int i;
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
+{
+	listint_t *current, *tmp_hold;
+	unsigned int i;
 
-	 i = 0u;
-	 current  = *head;
-	 /* check at index 0 */
-	 if (index == 0)
-	 {
-		 if (current == NULL)
-			 return (-1);
-		 tmp_hold = current->next;
-		 free(current);
-		 *head = tmp_hold;
-		 return (1);
-	 }
-	 /* looping to node before you delete */
-	 while (i < index - 1)
-	 {
-		 if (current != NULL)
-			 current = current->next;
-		 else
-			 return (-1);
-		 i++;
-	 }
+	i = 0u;
+	current  = *head;
 
-	 if (current == NULL)
-		 return (-1);
-	 if (current->next != NULL)
-	 {
-		 /* links the two nodes and remove the node in between */
-		 tmp_hold = current->next;
-		 current->next = (current->next)->next;
-		 free(tmp_hold);
-	 }
-	 else
-	 {
-		 return (-1);
-	 }
-	 return (1);
- }
+	if (index == 0)
+	{
+		if (current == NULL)
+			return (-1);
+		tmp_hold = current->next;
+		free(current);
+		*head = tmp_hold;
+		return (1);
+	}
+	/* looping to node before you delete */
+	while (i < index - 1)
+	{
+		if (current != NULL)
+			current = current->next;
+		else
+			return (-1);
+		i++;
+	}
+
+	if (current == NULL)
+		return (-1);
+	if (current->next != NULL)
+	{
+		/* links the two nodes and remove the node in between */
+		tmp_hold = current->next;
+		current->next = (current->next)->next;
+		free(tmp_hold);
+	}
+	else
+	{
+		return (-1);
+	}
+	return (1);
+}
