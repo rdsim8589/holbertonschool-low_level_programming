@@ -14,18 +14,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 	unsigned int i;
 
 	i = 0u;
-	/* create new node */
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
 		return (NULL);
 	current = *head;
-	/* loop through linked list */
 	if (*head == NULL)
 	{
 		new_node->n = n;
 		new_node->next = NULL;
 		*head = new_node;
-		return(new_node);
+		return (new_node);
 	}
 	if (index == 0)
 	{
@@ -47,12 +45,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 		}
 		i++;
 	}
-	if (current == NULL)
-	{
-		free(new_node);
-		return (NULL);
-	}
-	/* setting values of new node */
+
 	new_node->n = n;
 	new_node->next = current->next;
 	current->next = new_node;
