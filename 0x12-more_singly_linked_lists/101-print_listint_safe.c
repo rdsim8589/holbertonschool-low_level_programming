@@ -7,35 +7,33 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current;
 	list_check_t *head_2, *current_2;
 	size_t i;
 
 	i = 0u;
-	current = head;
 	head_2 = NULL;
 	current_2 = head_2;
-	while (current != NULL)
+	while (head != NULL)
 	{
 		while (current_2 != NULL)
 		{
-			if (current == current_2->ptr)
+			if (head == current_2->ptr)
 			{
 				free_listint3(head_2);
 				printf("-> [%p] %d\n",
-				       (void *)current, current->n);
+				       (void *)head, head->n);
 				return (i);
 			}
 			current_2 = current_2->next;
 		}
 
-		printf("[%p] %d\n", (void *)current, current->n);
-		if (add_nodeint_end_2(&head_2, (void *)current) == NULL)
+		printf("[%p] %d\n", (void *)head, head->n);
+		if (add_nodeint_end_2(&head_2, (void *)head) == NULL)
 		{
 			free_listint3(head_2);
 			exit(98);
 		}
-		current = current->next;
+		head = head->next;
 		current_2 = head_2;
 		i++;
 	}
