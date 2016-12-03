@@ -17,6 +17,20 @@ typedef struct listint_s
 	int n;
 	struct listint_s *next;
 } listint_t;
+/**
+ * struct list_check - singly linked list
+ * @ptr: a pointer
+ * @next: points to the next node
+ *
+ * Description: a singly linked list node structure to
+ * store the address of another linked list's nodes
+ */
+typedef struct list_check_s
+{
+	void *ptr;
+	struct list_check_s *next;
+} list_check_t;
+
 int _putchar(char c);
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
@@ -34,4 +48,7 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
+/* prototypes for file 101-print_listint_safe.c */
+list_check_t *add_nodeint_end_2(list_check_t **head, void* ptr);
+void free_listint3(list_check_t *head);
 #endif
