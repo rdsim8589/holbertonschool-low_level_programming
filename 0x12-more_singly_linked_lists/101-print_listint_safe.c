@@ -11,6 +11,8 @@ size_t print_listint_safe(const listint_t *head)
 	list_check_t *head_2, *current_2;
 	size_t i;
 
+	if (head == NULL)
+		exit(98);
 	i = 0u;
 	current = head;
 	head_2 = NULL;
@@ -30,7 +32,11 @@ size_t print_listint_safe(const listint_t *head)
 		}
 
 		printf("[%p] %d\n", (void *)current, current->n);
-		add_nodeint_end_2(&head_2, (void *)current);
+		if (add_nodeint_end_2(&head_2, (void *)current) == NULL)
+		{
+			free_listint3(head_2);
+			exit(98);
+		}
 		current = current->next;
 		current_2 = head_2;
 		i++;
@@ -66,7 +72,7 @@ list_check_t *add_nodeint_end_2(list_check_t **head, void *ptr)
 	/* creating a node */
 	new = malloc(sizeof(list_check_t));
 	if (new == NULL)
-		exit(98);
+		return (NULL);
 	new->ptr = ptr;
 	new->next = NULL;
 
