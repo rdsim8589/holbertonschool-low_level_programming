@@ -7,11 +7,11 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current;
+	const listint_t8 *current;
 	list_check_t *head_2, *current_2;
 	size_t i;
 
-	if (head = NULL)
+	if (head == NULL || *head == NULL)
 		exit (98);
 	i = 0u;
 	current = head;
