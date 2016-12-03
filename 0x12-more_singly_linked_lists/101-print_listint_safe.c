@@ -37,6 +37,7 @@ size_t print_listint_safe(const listint_t *head)
 		current_2 = head_2;
 		i++;
 	}
+	free_listint3(head_2);
 	return (i);
 }
 /**
