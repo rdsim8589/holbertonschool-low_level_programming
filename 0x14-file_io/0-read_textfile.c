@@ -9,26 +9,30 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t file_descrip, n, total;
-	size_t i;
-	char buf[BUF_SIZE];
+	ssize_t file_descrip, err_w, err_c, err_r;
+	char *buf;
 
 	if (filename == NULL)
 		return (0);
-	file_descrip = 	open(filename, O_CREAT | S_IRUSR, 400 | S_IWUSR, 200);
+
+	file_descrip = open(filename, O_RDONLY);
 	if (file_descrip == -1)
 		return (0);
 
-	total = 0;
-	while (i < letters)
-	{
-		n = read(file_descrip, buf, BUF_SIZE);
-		write(1, buf, BUF_SIZE);
-		i += BUF_SIZE;
-		total += n;
-		buf[BUF_SIZE] = '\0';
-	}
-	close(file_descrip);
-	return(total);
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
+		return (0);
 
+	err_r = read(file_descrip, buf, letters);
+	if (err_r == -1)
+		return (0);
+
+	err_w = write(STDOUT_FILENO, buf, letters);
+	if (err_w == -1 && err_r != err_w)
+		return (0);
+
+	err_c = close(file_descrip);
+	if (err_c == -1)
+		return (0);
+	return (err_w);
 }
