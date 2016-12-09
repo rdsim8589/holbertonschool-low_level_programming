@@ -1,6 +1,6 @@
 #ifndef GUARD
 #define GUARD
-#define BUF_SIZE 10
+#define BUFFERSIZE 1204
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
