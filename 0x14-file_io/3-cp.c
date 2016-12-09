@@ -11,10 +11,9 @@
 int main(int argc, char **argv)
 {
 	int file_to, file_from, r_file, w_file, c_file, i;
-	mode_t mode;
+	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buf[BUF_SIZE];
 
-	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	if (argv[1] == NULL)
@@ -28,16 +27,14 @@ int main(int argc, char **argv)
 			, argv[1]), exit(98);
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (file_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n"
-			, argv[2]), exit(99);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	i = 1;
 	while (i)
 	{
 		r_file = read(file_from, buf, BUF_SIZE);
 		if (r_file == -1)
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n"
+				, argv[1]), exit(98);
 		if (r_file > 0)
 		{
 			w_file = write(file_to, buf, r_file);
