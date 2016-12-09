@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv)
 {
-	int file_to, file_from, r_file, w_file, c_file, i;
+	int file_to, file_from, r_file, w_file, c_file;
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buf[BUF_SIZE];
 
@@ -28,8 +28,8 @@ int main(int argc, char **argv)
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-	i = 1;
-	while (i)
+	r_file = 1;
+	while (r_file)
 	{
 		r_file = read(file_from, buf, BUF_SIZE);
 		if (r_file == -1)
