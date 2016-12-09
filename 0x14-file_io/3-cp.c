@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv)
 {
-	int file_to, file_from, r_file, w_file, c_file;
+	int file_to, file_from, r_file, w_file, c_file, i;
 	mode_t mode;
 	char buf[BUF_SIZE];
 
@@ -32,15 +32,18 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n"
 			, argv[2]), exit(99);
 	}
-	r_file = read(file_from, buf, BUF_SIZE);
-	if (r_file == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n"
-			, argv[1]), exit(98);
-	if (r_file > 0)
+	i = 1;
+	while (i)
 	{
-		w_file = write(file_to, buf, r_file);
-		if (w_file == -1)
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+		r_file = read(file_from, buf, BUF_SIZE);
+		if (r_file == -1)
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+		if (r_file > 0)
+		{
+			w_file = write(file_to, buf, r_file);
+			if (w_file == -1)
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+		}
 	}
 	c_file = close(file_from);
 	if (c_file == -1)
