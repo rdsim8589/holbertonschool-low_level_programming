@@ -7,7 +7,6 @@
  *
  * Return: 0 if success
  */
-
 int main(int argc, char **argv)
 {
 	int file_to, file_from, r_file, w_file, c_file;
