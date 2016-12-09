@@ -10,7 +10,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int file_descrip;
-	ssize_t  err_w, err_c, err_r;
+	ssize_t  file_w, file_c, file_r;
 	char *buf;
 
 	if (filename == NULL)
@@ -24,25 +24,25 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buf == NULL)
 		return (0);
 
-	err_r = read(file_descrip, buf, letters);
-	if (err_r == -1)
+	file_r = read(file_descrip, buf, letters);
+	if (file_r == -1)
 	{
 		free(buf);
 		return (0);
 	}
-	if (err_r > 0)
-		err_w = write(STDOUT_FILENO, buf, letters);
-	if (err_w == -1)
+	if (file_r > 0)
+		file_w = write(STDOUT_FILENO, buf, letters);
+	if (file_w == -1 || file_w != file_r)
 	{
 		free(buf);
 		return (0);
 	}
-	err_c = close(file_descrip);
-	if (err_c == -1)
+	file_c = close(file_descrip);
+	if (file_c == -1)
 	{
 		free(buf);
 		return (0);
 	}
 	free(buf);
-	return (err_w);
+	return (file_w);
 }
