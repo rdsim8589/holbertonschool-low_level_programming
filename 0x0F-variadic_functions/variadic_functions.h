@@ -3,7 +3,7 @@
 /**
  * struct type_print - struct type_print
  * @data_type: the data type
- * @print: the function associated
+ * @prt: the function associated
  */
 typedef struct type_print
 {
