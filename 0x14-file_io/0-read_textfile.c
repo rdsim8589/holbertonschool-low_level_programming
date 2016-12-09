@@ -25,14 +25,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	err_r = read(file_descrip, buf, letters);
 	if (err_r == -1)
+	{
+		free(buf);
 		return (0);
-
+	}
 	err_w = write(STDOUT_FILENO, buf, letters);
 	if (err_w == -1)
+	{
+		free(buf);
 		return (0);
-
+	}
 	err_c = close(file_descrip);
 	if (err_c == -1)
+	{
+		free(buf);
 		return (0);
+	}
+	free (buf);
 	return (err_w);
 }
