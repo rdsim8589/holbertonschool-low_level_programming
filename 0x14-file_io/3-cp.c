@@ -44,10 +44,10 @@ int main(int argc, char **argv)
 	}
 	c_file = close(file_from);
 	if (c_file == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_from), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from), exit(100);
 	c_file = close(file_to);
 	if (c_file == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_to), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to), exit(100);
 	return (0);
 
 }
