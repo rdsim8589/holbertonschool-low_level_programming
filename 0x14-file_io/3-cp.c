@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int i, rfd, wfd, cfd;
-	char buf[BUFFERSIZE];
+	char buf[BUF_SIZE];
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	i = 1;
 	while (i)
 	{
-		i = read(rfd, buf, BUFFERSIZE);
+		i = read(rfd, buf, BUF_SIZE);
 		if (i == -1)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 				argv[1]), exit(98);
