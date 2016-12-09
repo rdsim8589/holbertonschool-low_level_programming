@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 		if (r_file > 0)
 		{
 			w_file = write(file_to, buf, r_file);
-			if (w_file == -1)
+			if (w_file == -1 || w_file != r_file)
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
 	}
@@ -49,5 +49,4 @@ int main(int argc, char **argv)
 	if (c_file == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to), exit(100);
 	return (0);
-
 }
