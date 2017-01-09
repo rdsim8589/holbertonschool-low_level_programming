@@ -20,7 +20,8 @@ dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 	if (*head == NULL)
 	{
 		node->prev = node->next = NULL;
-		return (*head = node);
+		*head = node;
+		return (node);
 	}
 
 	current = *head;
