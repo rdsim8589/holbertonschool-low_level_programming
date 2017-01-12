@@ -6,6 +6,7 @@
  * @n: value to be stored within the node
  *
  * Return: the address of the node or NULL if it fails
+ * Does not account to append node at the end of the linked list
  */
 dlistint_t *insert_dnodeint_at_idx(dlistint_t **head, unsigned int idx, int n)
 {
