@@ -8,12 +8,8 @@
 
 int main(void)
 {
-	int a;
-	int b;
-	int num_11;
-	int num_12;
-	int num_21;
-	int num_22;
+	int a, b;
+	int num_11, num_12, num_21, num_22;
 
 	for (a = 0; a < 100; a++)
 	{
