@@ -6,7 +6,7 @@
  * @ac: argument count
  * @av: arugment value. A pointer of a pointer to a string
  *
- * Return: returns a pointer to a char using using
+ * Return: returns a pointer to a char using
  */
 
 char *argstostr(int ac, char **av)
@@ -17,7 +17,7 @@ char *argstostr(int ac, char **av)
 	if (av == 0 || av == NULL)
 		return (NULL);
 /*find the size of all the strings in av*/
-	i = 0;
+	str_count = i = 0;
 	while (i < ac)
 	{
 		j = 0;
