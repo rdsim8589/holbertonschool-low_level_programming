@@ -18,7 +18,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		str_holder = va_arg(strings, char*);
 		if (separator != NULL)
-		{
+ 		{
 			if (str_holder != NULL)
 			{
 				if (i == n - 1)
