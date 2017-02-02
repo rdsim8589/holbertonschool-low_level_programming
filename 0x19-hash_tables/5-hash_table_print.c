@@ -19,7 +19,7 @@ void hash_table_print(const hash_table_t *ht)
 		}
 		else
 		{
-			ht_all_null =0;
+			ht_all_null = 0;
 			while (ht_node != NULL)
 			{
 				if (first_entry == 1)
@@ -35,7 +35,7 @@ void hash_table_print(const hash_table_t *ht)
 			}
 		}
 	}
-	if (ht == NULL || ht_all_null == 1)
+	if (ht == NULL)
 		printf("{");
 	printf("}\n");
 
