@@ -28,7 +28,7 @@ int main(void)
 	hash_table_set(ht, "urites", "value 11");
 	hash_table_set(ht, "dram", "value 12");
 	hash_table_set(ht, "vivency", "value 13");
-
+	hash_table_set(ht, "serafins", "replaced!");
 	for (i = 0; i < ht->size; i++)
 	{
 		if (ht->array[i] == NULL)
