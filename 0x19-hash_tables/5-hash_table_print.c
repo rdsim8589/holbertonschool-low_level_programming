@@ -6,34 +6,34 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	int first_entry;
-	hash_node_t *ht_node;
 	unsigned long int i, ht_all_null;
+	hash_node_t *mv_node;
 
 	if (ht == NULL)
 		return;
 	ht_all_null = first_entry = 1;
-	for (i = 0; i < ht->size && ht != NULL; i++)
+	for (i = 0; i < ht->size; i++)
 	{
-		ht_node = ht->array[i];
-		if (ht_node == NULL)
-		{
-			continue;
-		}
-		else
+		mv_node = ht->array[i];
+		if (mv_node != NULL)
 		{
 			ht_all_null = 0;
-			while (ht_node != NULL)
+			while (mv_node != NULL)
 			{
 				if (first_entry == 1)
 				{
 					printf("{'%s': '%s'",
-					       ht_node->key, ht_node->value);
+					       mv_node->key,
+					       mv_node->value);
 					first_entry = 0;
 				}
 				else
+				{
 					printf(", '%s': '%s'",
-					       ht_node->key, ht_node->value);
-				ht_node = ht_node->next;
+					       mv_node->key,
+					       mv_node->value);
+				}
+				mv_node = mv_node->next;
 			}
 		}
 	}
