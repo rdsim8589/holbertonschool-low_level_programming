@@ -40,5 +40,5 @@ void hash_table_print(const hash_table_t *ht);
 hash_node_t *chk_ht_node(const char *key, const char *val);
 void hash_table_delete(hash_table_t *ht);
 hash_node_t* scan_ht_check(hash_node_t* scanner_idx, const char *key);
-int prepend_node(hash_node_t** head, hash_node_t* node);
+int prepend_node(hash_node_t **head, hash_node_t *node);
 #endif
