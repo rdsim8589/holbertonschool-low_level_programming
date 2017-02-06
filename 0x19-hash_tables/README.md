@@ -1,4 +1,6 @@
+<img src="https://www.holbertonschool.com/assets/holberton-logo-1cc451260ca3cd297def53f2250a9794810667c7ca7b5fa5879a569a457bf16f.png" alt="Holberton logo">
 #Learning about hash tables
+These are the Holberton school assignments on the data structure of Hash Tables
 
 ##0-hash_table_create.c
 	contains a function that creates a hash table
