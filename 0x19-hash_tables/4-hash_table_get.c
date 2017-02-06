@@ -21,8 +21,11 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	}
 	else
 	{
-		while (hash_node->key != key)
-			hash_node = hash_node->next;
-		return (hash_node->value);
+		while (hash_node != NULL)
+			if (hash_node->key != key)
+				hash_node = hash_node->next;
+			else
+				return (hash_node->value);
+		return (NULL);
 	}
 }
