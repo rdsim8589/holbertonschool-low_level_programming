@@ -14,7 +14,17 @@ int main(void)
 	char *value;
 
 	ht = hash_table_create(1024);
-	hash_table_set(ht, "c", "fun");
+	hash_table_set(ht, "USA", "Washington");
+	hash_table_set(ht, "Canada", "Ottawa");
+
+	value = hash_table_get(ht, "USA");
+	printf("%s:%s\n", "USA", value);
+
+
+	value = hash_table_get(ht, "Canada");
+	printf("%s:%s\n", "Canada", value);
+
+/*	hash_table_set(ht, "c", "fun");
 	hash_table_set(ht, "python", "awesome");
 	hash_table_set(ht, "Jennie", "and Jay love asm");
 	hash_table_set(ht, "N", "queens");
@@ -75,5 +85,5 @@ int main(void)
 	printf("%s:%s\n", "c", value);
 	value = hash_table_get(ht, "javascript");
 	printf("%s:%s\n", "javascript", value);
-	return (EXIT_SUCCESS);
+*/	return (EXIT_SUCCESS);
 }

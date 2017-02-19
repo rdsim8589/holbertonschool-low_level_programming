@@ -1,86 +1,83 @@
 #include "sort.h"
 /**
- * quick_sort - Will sort an array with ints
+ * quick_sort - quick sort method
  * @array: an array of ints
  * @size: the size of the array
  */
 void quick_sort(int *array, size_t size)
 {
-	sort(array, 0, size - 1, size);
-}
-
-/**
- * sort - The actual quick sort recursive call
- * @array: the array of ints
- * @low: the lower bound of the array
- * @high: the higher bound of the array
- */
-void sort(int *array, size_t low, size_t high, size_t size)
-{
-	size_t j;
-
-	if (low >= high)
-		return;
-	j = quick_array_divider(array, low, high, size);
-	sort(array, low, j, size);
-	printf("i'm stuck in the first call\n");
-	sort(array, j + 1, high, size);
-	printf("i'm stuck in the second call\n");
+	rl_quick_sort(array, 0, (int) size - 1, size);
 }
 
 
 /**
- * quick_array_divider - Will divide the array into lower and higher numbers
- * @array: the array of ints
- * @size: the size of the array
- *
- * Return: the pivot indecating that all the numbers are less than it
+ * rl_quick_sort: recursive call that calls and sorts small
+ * partitions of the array
+ * @array: an array of ints
+ * @start: the first index of the array
+ * @end: the last index of the array
  */
-size_t quick_array_divider(int* array, size_t low, size_t high, size_t size)
+void rl_quick_sort(int *array, int start, int end, size_t size)
 {
-	size_t i, j;
-	i = low;
-	j = high;
-
-	while (1)
+	int i;
+	if ((end - start) > 2)
 	{
-		printf("i: %ld, j: %ld\n", i, j);
-		while(array[i] < array[low])
+		i = ary_divivder(array, start, end, size);
+		rl_quick_sort(array, start, i-1, size);
+		rl_quick_sort(array, i+1, end, size);
+	}
+}
+/**
+ * ary_divivder - divides the array into number
+ * less than and greater then the pivot
+ * @array: the array of ints
+ * @start: the start of the array section
+ * @end: the end of the array sections
+ */
+int ary_divivder(int *array, int start, int end, size_t size)
+{
+	int i, j;
+	int pivot;
+
+	i = start;
+	j = end;
+	pivot = array[j];
+	while (end > start)
+	{
+/*		printf("start: %i, i: %i, j:%i, end: %i\n", start, i, j, end);*/
+		while (array[i] < pivot && i <= end)
 		{
-			if (i == high)
-				break;
 			i++;
 		}
-		while(array[j] > array[low])
+		while (array[j] > pivot && j >= start)
 		{
-			if (j == low)
-				break;
 			j--;
 		}
-		if (i >= j)
-			break;
-		swap_print(array, i, j, size);
+		if (i < j)
+		{
+			swap(array, i, j);
+			print_array(array, size);
+		}
+		else
+		{
+			return (j);
+		}
 	}
-	swap_print(array, j, high, size);
-	return (j);
-
-
-
+	return (end);
 }
 
 /**
- * swap_print - swaping the value of array at idx_1 and idx_2
+ * swap - swaping the value of array at idx_1 and idx_2
  * @array: the array of ints
  * @idx_1: the first index
  * @idx_2: the seconds index
  *
  */
-void swap_print(int *array, size_t idx_1, size_t idx_2, size_t size)
+void swap(int *array, size_t idx_1, size_t idx_2)
 {
 	int tmp;
 
 	tmp = array[idx_1];
 	array[idx_1] = array[idx_2];
 	array[idx_2] = tmp;
-	print_array(array, size);
 }
