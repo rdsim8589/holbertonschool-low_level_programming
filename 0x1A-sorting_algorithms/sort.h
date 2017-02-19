@@ -22,6 +22,10 @@ void check_back(listint_t *scan, listint_t **list);
 
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
+/* the actual quick sort */
+void sort(int *array, size_t low, size_t high, size_t size);
+size_t quick_array_divider(int* array, size_t low, size_t high, size_t size);
+
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
@@ -31,9 +35,10 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 /*void sort_deck(deck_node_t **deck);*/
 
-/* helper function */
+/* printing function */
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
+void swap_print(int *array, size_t idx_1, size_t idx_2, size_t size);
 listint_t *create_listint(const int *array, size_t size);
 /* swap for arrays */
 void swap(int *array, size_t idx_1, size_t idx_2);
