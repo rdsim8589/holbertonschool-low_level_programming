@@ -23,8 +23,8 @@ void check_back(listint_t *scan, listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 /* the actual quick sort */
-void sort(int *array, size_t low, size_t high, size_t size);
-size_t quick_array_divider(int* array, size_t low, size_t high, size_t size);
+void rl_quick_sort(int *array, int start, int end, size_t size);
+int ary_divivder(int *array, int start, int end, size_t size);
 
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
