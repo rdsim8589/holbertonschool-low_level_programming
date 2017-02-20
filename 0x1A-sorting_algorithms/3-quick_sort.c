@@ -9,7 +9,6 @@ void quick_sort(int *array, size_t size)
 	rl_quick_sort(array, 0, (int) size - 1, size);
 }
 
-
 /**
  * rl_quick_sort- recursive call that calls and sorts small
  * partitions of the array
