@@ -11,48 +11,48 @@ void quick_sort(int *array, size_t size)
 
 
 /**
- * rl_quick_sort: recursive call that calls and sorts small
+ * rl_quick_sort- recursive call that calls and sorts small
  * partitions of the array
  * @array: an array of ints
  * @start: the first index of the array
  * @end: the last index of the array
+ * @size: the size of the array
  */
 void rl_quick_sort(int *array, int start, int end, size_t size)
 {
 	int i;
 	if ((end - start) >= 1)
 	{
-		i = ary_divivder(array, start, end, size);
-		rl_quick_sort(array, start, i -1, size);
-		rl_quick_sort(array, i+1, end, size);
+		i = ary_divider(array, start, end, size);
+		rl_quick_sort(array, start, i - 1, size);
+		rl_quick_sort(array, i + 1, end, size);
 	}
 }
 /**
- * ary_divivder - divides the array into number
+ * ary_divider- divides the array into number
  * less than and greater then the pivot
  * @array: the array of ints
  * @start: the start of the array section
  * @end: the end of the array sections
+ * @size: the size of the array
+ *
+ * Return: index to divide the array
  */
-int ary_divivder(int *array, int start, int end, size_t size)
+int ary_divider(int *array, int start, int end, size_t size)
 {
 	int i, j;
 	int pivot;
 
 	i = start;
 	j = end;
-	pivot = array[j];
+	pivot = array[i];
 /*	printf("start: %i, i: %i, j:%i, end: %i\n", start, i, j, end);*/
 	while (end > start)
 	{
 		while (array[i] < pivot && i <= end)
-		{
 			i++;
-		}
 		while (array[j] > pivot && j >= start)
-		{
 			j--;
-		}
 		if (i < j)
 		{
 			swap(array, i, j);
@@ -63,7 +63,7 @@ int ary_divivder(int *array, int start, int end, size_t size)
 			return (j);
 		}
 	}
-	return (end);
+	return (start);
 }
 
 /**
