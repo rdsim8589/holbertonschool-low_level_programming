@@ -24,7 +24,7 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 /* the actual quick sort */
 void rl_quick_sort(int *array, int start, int end, size_t size);
-int ary_divivder(int *array, int start, int end, size_t size);
+int ary_divider(int *array, int start, int end, size_t size);
 
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
