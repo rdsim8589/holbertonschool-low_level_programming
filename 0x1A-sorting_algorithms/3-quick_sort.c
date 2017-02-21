@@ -20,11 +20,11 @@ void quick_sort(int *array, size_t size)
 void rl_quick_sort(int *array, int start, int end, size_t size)
 {
 	int i;
-	if ((end - start) >= 1)
+	if (start < end)
 	{
 		i = ary_divider(array, start, end, size);
 		rl_quick_sort(array, start, i - 1, size);
-		rl_quick_sort(array, i + 1, end, size);
+		rl_quick_sort(array, i, end, size);
 	}
 }
 /**
@@ -42,27 +42,30 @@ int ary_divider(int *array, int start, int end, size_t size)
 	int i, j;
 	int pivot;
 
-	i = start;
-	j = end;
-	pivot = array[i];
-/*	printf("start: %i, i: %i, j:%i, end: %i\n", start, i, j, end);*/
-	while (end > start)
+	i = start - 1;
+	j = end + 1;
+	pivot = array[end];
+	while (1)
 	{
-		while (array[i] < pivot && i <= end)
+		do{
 			i++;
-		while (array[j] > pivot && j >= start)
+		}
+		while (array[i] < pivot);
+
+		do{
 			j--;
-		if (i < j)
+		}
+		while (array[j] > pivot);
+		if (i >= j)
+		{
+			return (i);
+		}
+		else
 		{
 			swap(array, i, j);
 			print_array(array, size);
 		}
-		else
-		{
-			return (j);
-		}
 	}
-	return (start);
 }
 
 /**
