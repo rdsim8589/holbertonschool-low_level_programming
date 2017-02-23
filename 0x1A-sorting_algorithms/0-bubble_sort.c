@@ -12,29 +12,22 @@ void bubble_sort(int *array, size_t size)
 		return;
 	i = 0;
 	tmp_size = size;
-	swapped = 0;
-	while (i < tmp_size)
+	swapped = 1;
+	while (swapped)
 	{
-		if ((array + i) == NULL)
-			return;
-		if (array[i] > array[i + 1])
+		swapped = 0;
+		for (i = 0; i < tmp_size - 1; i++)
 		{
-			swap(array, i, i + 1);
-			print_array(array, size);
-			swapped = 1;
-		}
-		if (i + 1 == tmp_size - 1)
-		{
-			if (swapped == 0)
+			if ((array + i) == NULL )
 				return;
-			i = 0;
-			tmp_size -= 1;
-			swapped = 0;
+			if (array[i] > array[i + 1])
+			{
+				swap(array, i, i + 1);
+				print_array(array, size);
+				swapped = 1;
+			}
 		}
-		else
-		{
-			i++;
-		}
+		tmp_size -= 1;
 	}
 }
 /**
