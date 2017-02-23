@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * selection_sort: sorts a list of ints with selection sort algorithm
+ * selection_sort -sorts a list of ints with selection sort algorithm
  * @array: an array of ints
  * @size: the size of the array
  */
