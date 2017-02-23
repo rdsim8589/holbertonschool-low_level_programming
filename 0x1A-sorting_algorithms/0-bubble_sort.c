@@ -6,13 +6,13 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, tmp_size, flag;
+	size_t i, tmp_size, swapped;
 
-	if (array == NULL || size == 1)
+	if (array == NULL || size <= 1)
 		return;
 	i = 0;
 	tmp_size = size;
-	flag = 0;
+	swapped = 0;
 	while (i < tmp_size)
 	{
 		if ((array + i) == NULL)
@@ -21,15 +21,15 @@ void bubble_sort(int *array, size_t size)
 		{
 			swap(array, i, i + 1);
 			print_array(array, size);
-			flag = 1;
+			swapped = 1;
 		}
 		if (i + 1 == tmp_size - 1)
 		{
-			if (flag == 0)
+			if (swapped == 0)
 				return;
 			i = 0;
 			tmp_size -= 1;
-			flag = 0;
+			swapped = 0;
 		}
 		else
 		{
