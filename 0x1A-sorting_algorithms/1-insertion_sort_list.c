@@ -6,6 +6,7 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *scan, *tmp;
+
 	if (*list == NULL)
 		return;
 	scan = (*list)->next;
@@ -46,7 +47,7 @@ void check_back(listint_t *scan, listint_t **list)
  * @node: the node to check
  * @list: the head of the linked list to be reset before print
  */
-void swap_prev(listint_t *prev_node, listint_t* node, listint_t **list)
+void swap_prev(listint_t *prev_node, listint_t *node, listint_t **list)
 {
 	if (prev_node->prev != NULL)
 		prev_node->prev->next = node;
