@@ -8,6 +8,7 @@
  *
  * @n: Integer stored in the node
  * @next: Pointer to the next element of the list
+ * @prev: The Pointer the prev element of the list
  */
 typedef struct listint_s
 {
@@ -43,7 +44,5 @@ listint_t *create_listint(const int *array, size_t size);
 /* swap for arrays */
 void swap(int *array, size_t idx_1, size_t idx_2);
 /* swap previous node */
-void swap_prev(listint_t *prev_node, listint_t* node, listint_t **list);
-
-
+void swap_prev(listint_t *prev_node, listint_t *node, listint_t **list);
 #endif
