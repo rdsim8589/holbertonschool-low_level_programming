@@ -22,6 +22,7 @@ void quick_sort(int *array, size_t size)
 void rl_quick_sort(int *array, int start, int end, size_t size)
 {
 	int i;
+
 	if (start < end)
 	{
 		i = ary_divider(array, start, end, size);
@@ -47,17 +48,16 @@ int ary_divider(int *array, int start, int end, size_t size)
 	i = start - 1;
 	j = end + 1;
 	pivot = array[end];
+
 	while (1)
 	{
-		do{
+		do {
 			i++;
-		}
-		while (array[i] < pivot);
+		} while (array[i] < pivot);
 
-		do{
+		do {
 			j--;
-		}
-		while (array[j] > pivot);
+		} while (array[j] > pivot);
 		if (i >= j)
 		{
 			return (i);
