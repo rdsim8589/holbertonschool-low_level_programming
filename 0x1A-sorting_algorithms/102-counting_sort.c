@@ -40,7 +40,7 @@ void counting_sort(int *array, size_t size)
 		tmp_ary[hash_ary[array[t_j]] - 1] = array[t_j];
 	swap_values(array, tmp_ary, size);
 	free(array);
-	free(tmp_ary;
+	free(tmp_ary);
 }
 /**
  * find_max_val - finds the max value of an array
