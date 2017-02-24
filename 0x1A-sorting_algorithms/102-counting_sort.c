@@ -39,6 +39,8 @@ void counting_sort(int *array, size_t size)
 	for (t_j = 0; t_j < size; t_j++)
 		tmp_ary[hash_ary[array[t_j]] - 1] = array[t_j];
 	swap_values(array, tmp_ary, size);
+	free(array);
+	free(tmp_ary;
 }
 /**
  * find_max_val - finds the max value of an array
