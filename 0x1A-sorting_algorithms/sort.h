@@ -30,6 +30,10 @@ int ary_divider(int *array, int start, int end, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
+/* helper functions for counting sort */
+int find_max_val(int *array, size_t size);
+void swap_values(int *array, int *tmp_ary, size_t size);
+
 void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
