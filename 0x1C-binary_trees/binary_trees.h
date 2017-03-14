@@ -22,6 +22,28 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
+struct binary_lvl_val_s
+{
+	int n;
+	struct binary_lvl_val_s *next;
+};
+typedef struct binary_lvl_val_s binary_lvl_val_t;
+
+/**
+ * struct binary_level_s - Binary tree level
+ *
+ * @n: the level of the binary tree
+ * @right: the pointer to the previous level
+ * @left: the pointer to the next level
+ */
+struct binary_level_s
+{
+	int level;
+	struct binary_level_s *right;
+	struct binary_level_s *left;
+	struct binary_lvl_val_s *lvl_val_head;
+};
+typedef struct binary_level_s binary_level_t;
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
@@ -63,4 +85,13 @@ int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
 /* binary tree print */
 void binary_tree_print(const binary_tree_t *tree);
+/* binary_level_fun.c */
+void binary_level_free(binary_level_t *level_head);
+binary_level_t *binary_tree_level_recur(
+	const binary_tree_t *tree, binary_level_t *level_head, int lvl);
+void print_tree_levels(binary_level_t *level_head, void (*func)(int));
+void binary_level_free(binary_level_t *level_head);
+void *binary_tree_val_push(
+	binary_level_t *level_head, int level, int tree_node_val);
+void prepend_lvl_val(binary_level_t *head, int tree_node_val);
 #endif
