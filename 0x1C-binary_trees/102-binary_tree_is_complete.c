@@ -52,14 +52,16 @@ const binary_tree_t *dequeue(binary_queue_t **queue)
 int check_queue(binary_queue_t **queue)
 {
 	const binary_tree_t *checker;
+	int queue_check;
 
+	queue_check = 1;
 	while (*queue != NULL)
 	{
 		checker = dequeue(queue);
 		if (checker != NULL)
-			return (0);
+			queue_check = 0;
 	}
-	return (1);
+	return (queue_check);
 }
 /**
  * binary_tree_is_complete - determines if a tree is complete
@@ -85,7 +87,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			value = check_queue(&queue);
 			if (value == 0)
 				return (0);
-			return (1);
+			break;
 		}
 		enqueue(node->left, &queue);
 		enqueue(node->right, &queue);
