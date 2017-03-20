@@ -41,16 +41,18 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	{
 		if (found == 1)
 			return (search);
-		if (found == 0)
+		if (found == 0 && search->parent != NULL)
 		{
 			if (search->parent == second)
 				return (search->parent);
 			if (search->parent->left == search)
-			{
-				search = search->parent;
-				found = find_node(search->right, second);
-			}
+				found = find_node(
+					search->parent->right, second);
+			else if (search->parent->right == search)
+				found = find_node(
+					search->parent->left, second);
 		}
+		search = search->parent;
 	}
 	return (NULL);
 }
