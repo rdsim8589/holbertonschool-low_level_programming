@@ -44,6 +44,18 @@ struct binary_level_s
 	struct binary_lvl_val_s *lvl_val_head;
 };
 typedef struct binary_level_s binary_level_t;
+
+/**
+ * binary_queue_s - node to hold a tree node
+ * @next: pointer to the next node
+ * @node: pointer to the tree node
+ */
+struct binary_queue_s
+{
+	struct binary_queue_s *next;
+	const binary_tree_t *node;
+};
+typedef struct binary_queue_s binary_queue_t;
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
