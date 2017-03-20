@@ -41,7 +41,7 @@ const binary_tree_t *dequeue(binary_queue_t **queue)
 	node_holder = queue_holder->node;
 	*queue = queue_holder->next;
 	free(queue_holder);
-	return(node_holder);
+	return (node_holder);
 }
 /**
  * binary_tree_levelorder -  prints the binary tree by level order

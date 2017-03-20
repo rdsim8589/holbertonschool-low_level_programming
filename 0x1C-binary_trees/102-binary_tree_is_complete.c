@@ -41,10 +41,10 @@ const binary_tree_t *dequeue(binary_queue_t **queue)
 	node_holder = queue_holder->node;
 	*queue = queue_holder->next;
 	free(queue_holder);
-	return(node_holder);
+	return (node_holder);
 }
 /**
- * check_queue: checks if the return of queue->node == NULL
+ * check_queue - checks if the return of queue->node == NULL
  * @queue: double pointer to the queue
  *
  * Return: 1 if queue->node == NULL, 0 otherwise
@@ -52,6 +52,7 @@ const binary_tree_t *dequeue(binary_queue_t **queue)
 int check_queue(binary_queue_t **queue)
 {
 	const binary_tree_t *checker;
+
 	while (*queue != NULL)
 	{
 		checker = dequeue(queue);
@@ -73,7 +74,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	int value;
 
 	if (tree == NULL)
-		return(0);
+		return (0);
 	queue = NULL;
 	enqueue(tree, &queue);
 	while (queue != NULL)
@@ -83,12 +84,11 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		{
 			value = check_queue(&queue);
 			if (value == 0)
-				return(0);
-			else
-				break;
+				return (0);
+			break;
 		}
 		enqueue(node->left, &queue);
 		enqueue(node->right, &queue);
 	}
-	return(1);
+	return (1);
 }
