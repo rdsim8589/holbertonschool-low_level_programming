@@ -1,66 +1,69 @@
 #include "binary_trees.h"
-#include "binary_level_func.c"
+/**
+ * enqueue - push the tree node into the node of the queueu
+ * @tree: pointer to the node to be saved
+ * @queue: pointer to the head of the queue
+ */
+void enqueue(const binary_tree_t *tree, binary_queue_t **queue)
+{
+	binary_queue_t *tmp_queue, *search;
+
+	tmp_queue = malloc(sizeof(binary_queue_t));
+	if (tmp_queue == NULL)
+		return;
+	tmp_queue->next = NULL;
+	tmp_queue->node = tree;
+
+	if (*queue == NULL)
+	{
+		*queue = tmp_queue;
+	}
+	else
+	{
+		search = *queue;
+		while (search->next != NULL)
+			search = search->next;
+		search->next = tmp_queue;
+	}
+}
+/**
+ * dequeue - pop the first node of the queue and return tree node
+ * @queue: pointer to the head of the queue
+ *
+ * Return: pointer to the binary tree node
+ */
+const binary_tree_t *dequeue(binary_queue_t **queue)
+{
+	binary_queue_t *queue_holder;
+	const binary_tree_t *node_holder;
+
+	queue_holder = *queue;
+	node_holder = queue_holder->node;
+	*queue = queue_holder->next;
+	free(queue_holder);
+	return(node_holder);
+}
 /**
  * binary_tree_levelorder -  prints the binary tree by level order
  * @tree: the node to the tree
- * @func: function pointer
+ * @func: function pointer:
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	binary_level_t *level_head;
+	binary_queue_t *queue;
+	const binary_tree_t *node;
 
 	if (tree == NULL || func == NULL)
 		return;
-	level_head = malloc(sizeof(binary_level_t));
-	if (level_head == NULL)
-		binary_level_free(level_head);
-	level_head->right = NULL;
-	level_head->left = NULL;
-	level_head->level = 0;
-	level_head->lvl_val_head = NULL;
-	level_head = binary_tree_level_recur(tree, level_head, 0);
-	print_tree_levels(level_head, func);
-	binary_level_free(level_head);
-}
-/**
- * binary_tree_level_recur - recursive search through a binary tree
- * @tree: pointer to a node in a tree
- * @level_head: pointer to a node in level linked list
- * @lvl: current level of the tree node
- *
- * Return: the a pointer to the level linked list
- */
-binary_level_t *binary_tree_level_recur(
-	const binary_tree_t *tree, binary_level_t *level_head, int lvl)
-{
-	if (tree == NULL || level_head == NULL)
-		return (NULL);
-	binary_tree_val_push(level_head, lvl, tree->n);
-	binary_tree_level_recur(tree->right, level_head, lvl + 1);
-	binary_tree_level_recur(tree->left, level_head, lvl + 1);
-	return (level_head);
-
-}
-/**
- * print_tree_levels - prints all the trees by level
- * @level_head: pointer level linked list
- * @func: pointer to a function
- */
-void print_tree_levels(binary_level_t *level_head, void (*func)(int))
-{
-	binary_lvl_val_t *lvl_val_head;
-
-	while (level_head->left != NULL)
-		level_head = level_head->left;
-	while (level_head != NULL)
+	queue = NULL;
+	enqueue(tree, &queue);
+	while (queue != NULL)
 	{
-		lvl_val_head = level_head->lvl_val_head;
-		while (lvl_val_head != NULL)
-		{
-			func(lvl_val_head->n);
-			lvl_val_head = lvl_val_head->next;
-		}
-		level_head = level_head->right;
+		node = dequeue(&queue);
+		if (node == NULL)
+			continue;
+		func(node->n);
+		enqueue(node->left, &queue);
+		enqueue(node->right, &queue);
 	}
-
 }
