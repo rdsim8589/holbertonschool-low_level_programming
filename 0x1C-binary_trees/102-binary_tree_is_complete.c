@@ -85,7 +85,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			value = check_queue(&queue);
 			if (value == 0)
 				return (0);
-			break;
+			return (1);
 		}
 		enqueue(node->left, &queue);
 		enqueue(node->right, &queue);
