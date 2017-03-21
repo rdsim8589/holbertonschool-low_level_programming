@@ -39,5 +39,39 @@ int main(void)
 	binary_tree_print(root);
 	complete = binary_tree_is_complete(root);
 	printf("Is %d complete: %d\n", root->n, complete);
+
+	root = binary_tree_node(NULL, 102);
+	root->left = binary_tree_insert_left(root, 122);
+	root->left->left = binary_tree_insert_left(root->left, 144);
+	binary_tree_print(root);
+	complete = binary_tree_is_complete(root);
+	printf("Is %d complete: %d\n", root->n, complete);
+
+	complete = binary_tree_is_complete(root->left);
+	printf("Is %d complete: %d\n", root->left->n, complete);
+
+	root = binary_tree_node(NULL, 345);
+	root->right = binary_tree_insert_right(root, 234);
+	root->right->right = binary_tree_insert_right(root->right, 124);
+	binary_tree_print(root);
+	complete = binary_tree_is_complete(root);
+	printf("Is %d complete: %d\n", root->n, complete);
+
+	root = binary_tree_node(NULL, 345);
+	binary_tree_print(root);
+	complete = binary_tree_is_complete(root);
+	printf("Is %d complete: %d\n", root->n, complete);
+
+
+	root = binary_tree_node(NULL, 345);
+	root->left = binary_tree_insert_left(root, 234);
+	binary_tree_print(root);
+	complete = binary_tree_is_complete(root);
+	printf("Is %d complete: %d\n", root->n, complete);
+
+	root = NULL;
+	complete = binary_tree_is_complete(root);
+	printf("Is %p complete: %d\n",(void *) root, complete);
+
 	return (0);
 }
