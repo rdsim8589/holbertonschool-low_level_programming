@@ -51,6 +51,7 @@ bst_t *connect_node(bst_t **parent, bst_t *child, int n, char side)
 bst_t *bst_insert(bst_t **tree, int value)
 {
 	bst_t *tmp;
+
 	if (tree == NULL)
 		return (NULL);
 	if (*tree == NULL)
