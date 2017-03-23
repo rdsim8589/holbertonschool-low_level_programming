@@ -75,8 +75,11 @@ bst_t *bst_remove(bst_t *root, int value)
 	{
 		rp_node = rm_node;
 		rp_node = rp_node->right;
-		while (rp_node->left != NULL)
-			rp_node = rp_node->left;
+		if (rp_node != NULL)
+		{
+			while (rp_node->left != NULL)
+				rp_node = rp_node->left;
+		}
 		rm_node->n = rp_node->n;
 		connect_parent(rp_node, NULL);
 	}
