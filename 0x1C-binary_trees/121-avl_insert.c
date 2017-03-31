@@ -16,7 +16,7 @@ avl_t *balance_avl(avl_t *node)
 			node->left = binary_tree_rotate_left((binary_tree_t *) node->left);
 		if (node->left->left)
 		{
-			return((avl_t *)binary_tree_rotate_right((binary_tree_t *) node));
+			return ((avl_t *)binary_tree_rotate_right((binary_tree_t *) node));
 		}
 	}
 	else if (!node->left)
@@ -31,17 +31,19 @@ avl_t *balance_avl(avl_t *node)
 	return (node);
 }
 /**
- * avl_insert tree - insert a node into avl_tree
+ * avl_insert - insert a node into avl_tree
  * This will insert into avl and rebalance the tree
  * @tree: double pointer to the root of the tree
  * @value: value to insert into a node
+ *
+ * Return: the new root of the tree
  */
 avl_t *avl_insert(avl_t **tree, int value)
 {
 	avl_t *node, *tmp_node, *tmp_parent;
 
 	if (tree == NULL)
-		return NULL;
+		return (NULL);
 	tmp_node = node = (avl_t *)bst_insert((bst_t **) tree, value);
 	while (tmp_node->parent != NULL)
 	{
