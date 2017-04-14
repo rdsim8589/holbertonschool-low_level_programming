@@ -2,9 +2,11 @@
 /**
  * binary_search_recursion - recursive search through the binary search
  * @array: pointer to the front of the array
- * @front: fron
- * @end:
- * @value:
+ * @front: the front of the array
+ * @end: the end of the array
+ * @value: value to search for
+ *
+ * Return: index if found, -1 if not found, and -2 if error is caught
  */
 int binary_search_recursion(int *array, size_t front, size_t end, int value)
 {
@@ -22,9 +24,9 @@ int binary_search_recursion(int *array, size_t front, size_t end, int value)
 	if (array[index] == value)
 		return (index);
 	if (array[index] > value)
-		return binary_search_recursion(array, front, index, value);
+		return (binary_search_recursion(array, front, index, value));
 	if (array[index] < value)
-		return binary_search_recursion(array, index + 1, end, value);
+		return (binary_search_recursion(array, index + 1, end, value));
 	return (-2);
 }
 /**
