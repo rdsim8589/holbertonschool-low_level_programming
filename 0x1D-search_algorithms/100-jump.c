@@ -16,22 +16,19 @@ int jump_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-	left = end = 0;
-	right = jump = sqrt(size);
-	while (value >= array[right] && end == 0)
+	right = left = end = 0;
+	jump = sqrt(size);
+	while (array[right] < value && end == 0)
 	{
 		printf("Value checked array[%lu] = [%d]\n",
-		       left, array[left]);
-		printf("Value checked array[%lu] = [%d]\n",
 		       right, array[right]);
-		left += jump;
+		left = right;
 		right += jump;
 		if (right > size - 1)
 		{
 			right = size - 1;
 			end = 1;
 		}
-
 	}
 	printf("Value found between indexes [%lu] and [%lu]\n", left, left + jump);
 	index = linear_search(&array[left], right - left + 1, value);
