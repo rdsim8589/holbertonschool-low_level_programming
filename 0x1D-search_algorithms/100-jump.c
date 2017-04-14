@@ -1,6 +1,5 @@
 #include "search_algos.h"
 #include <math.h>
-#include "0-linear.c"
 /**
  * jump_search - Search value of a sorted array using jump search
  * @array: Pointer to the front of the array
@@ -11,8 +10,8 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t left, right, jump;
-	int end, index;
+	size_t left, right, jump, i;
+	int end;
 
 	if (array == NULL)
 		return (-1);
@@ -31,9 +30,11 @@ int jump_search(int *array, size_t size, int value)
 		}
 	}
 	printf("Value found between indexes [%lu] and [%lu]\n", left, left + jump);
-	index = linear_search(&array[left], right - left + 1, value);
-	if (index == -1)
-		return (-1);
-	else
-		return (left + index);
+	for (i = left; i <= right; i++)
+	{
+		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+		if (value ==  array[i])
+			return (i);
+	}
+	return (-1);
 }
