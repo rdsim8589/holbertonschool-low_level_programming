@@ -24,7 +24,7 @@ int exponential_search(int *array, size_t size, int value)
 		printf("Value checked array[%lu] = [%d]\n", front, array[front]);
 		front = front * 2;
 	}
-	if (front > size)
+	if (front > size - 1)
 		end = size - 1;
 	else
 		end = front;
